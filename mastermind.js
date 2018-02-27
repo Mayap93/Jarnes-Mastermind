@@ -82,6 +82,8 @@ function Mastermind(options) {
 
 
 
+
+
 	  // Set up event handlers for field click on active row
 		elements = document.querySelectorAll(".row.active .field");
 		for (var field of elements) {
@@ -91,12 +93,12 @@ function Mastermind(options) {
 		  	//	Get the field clicked on
 		  		let field = e.target.parentNode.parentNode;
 		  		//* console.log(field);
-		  		
+
 		  	// 	Get color clicked on
 		  		let color = e.target.getAttribute("data-value");
 		  		//* console.log(color);
 
-		  	// Call the handler for color clicks	
+		  	// Call the handler for color clicks
 		  	self.handleColorClick(field, color); // notice we can't use 'this' here, since this now refers to the item
 		  })
 		} // end for
@@ -124,18 +126,18 @@ function Mastermind(options) {
 	  		this.win();
 	  	} else {
 	  		this.currentRound++;
-	  		
+
 	  		// end game if out of rounds
 	  		if(this.currentRound > this.maxRounds) {
 	  			this.loose();
 	  		}
-	  		
+
 
 	  		// new round
-	  		
+
 
 	  		// calculate correct answers
-	  		 
+
 	  		for (var i = 0; i < this.guessList.length; i++) {
 	  			if(this.goal.includes(this.guessList[i])) {
 	  				if(this.guessList[i] === this.goal[i]) {
@@ -146,11 +148,11 @@ function Mastermind(options) {
 	  					console.log("1 color correct, but position is wrong");
 	  				}
 	  			}
-	  			
+
 	  		}
 	  		console.log(roundResult);
 	  		var resultElm = document.createElement("p");
-	  		resultElm.innerHTML = roundResult.color + ' color<br>'+roundResult.colorAndPosition+' color AND position';
+	  		resultElm.innerHTML = roundResult.color + ' COLOR<br>'+roundResult.colorAndPosition+' COLOR AND <br>POSITION';
 	  		document.querySelector(".row.active").append(resultElm);
 
 	  		//document.querySelector(".result")
@@ -161,9 +163,9 @@ function Mastermind(options) {
 				// remove the .answer button element
 				new_element.removeChild(new_element.querySelector(".answer"));
 			old_element.parentNode.replaceChild(new_element, old_element);
-	  		
 
-	  		document.querySelector(".row.active").classList.remove("active"); 
+
+	  		document.querySelector(".row.active").classList.remove("active");
 
 
 
@@ -219,7 +221,7 @@ function Mastermind(options) {
 
 
 
-// - - - 
+// - - -
 
 function ColorSelector(colors) {
 	this.container = '<div class="colorSelector">';
@@ -235,5 +237,3 @@ function ColorSelector(colors) {
 	//* console.log(this.colorSelector);
 	return this.container;
 }
-
-

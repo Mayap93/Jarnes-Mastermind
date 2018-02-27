@@ -7,13 +7,19 @@ h1 {
     font-weight: normal;
 }
 
+p {
+	font-size: 17px;
+font-weight: bold;
+	color: #E91E63;
+	padding: 5px;
 
+}
 :root {
 	--height: 90px;
 	--width: 90px;
 }
 * {
-	margin: 0;
+	@include
 	padding: 0;
 	border: none;
 }
@@ -40,7 +46,8 @@ h1 {
 	height: var(--height);
 	background-color: #e2e2e2;
 	display: inline-block;
-    border-right: 2px white dashed;	
+    border-right: 2px white dashed;
+		border-radius: 5px;
 }
 .field:last-of-type {
 	border-right: none;
@@ -50,6 +57,7 @@ h1 {
     outline: 5px solid gray;
     z-index: 10;
     border-right: 2px solid grey;
+
 }
 .color1 {
 	background-color: blue;
@@ -61,11 +69,13 @@ h1 {
 	top: 0;*/
 	width: var(--width);
 	cursor: pointer;
+
 }
 .colorSelector__color {
 	display: block;
 	width: var(--width);
 	height: var(--height);
+	border-radius: 5px;
 }
 .selector--hide .colorSelector {
 	display: none;
@@ -74,10 +84,16 @@ h1 {
 	display: inline-block;
 	height: var(--height);
 	width: var(--width);
+  padding: 15px 25px;
+  font-size: $font-size;
+  color: $text-color;
+  background-color: #7F266C;
+  border-radius: 5px;
+  border: 0;
 }
 .answer:hover {
 	cursor: pointer;
-	background-color: #545454;
+	background-color: #d674c1;
 	color: #fff;
 }
 
